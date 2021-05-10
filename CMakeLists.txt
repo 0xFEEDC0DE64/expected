@@ -1,4 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
+
+if(NOT IDF_TARGET STREQUAL "esp32")
+
 project(tl-expected
   HOMEPAGE_URL https://tl.tartanllama.xyz
   DESCRIPTION "C++11/14/17 std::expected with functional-style extensions"
@@ -115,3 +118,8 @@ list(APPEND CPACK_SOURCE_IGNORE_FILES /.git/ /build/ .gitignore .DS_Store)
 
 include(CPack)
 
+else()
+
+idf_component_register(INCLUDE_DIRS include)
+
+endif()
