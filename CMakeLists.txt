@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 
-if(NOT IDF_TARGET STREQUAL "esp32")
+if(NOT DEFINED IDF_TARGET)
 
 project(tl-expected
   HOMEPAGE_URL https://tl.tartanllama.xyz
